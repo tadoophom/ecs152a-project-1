@@ -1,0 +1,12 @@
+# Ignore everything by default
+*
+
+# Allow directory structures to be recursed
+!*/
+
+# Keep the Wireshark capture directory and its contents
+!wireshark-files/
+!wireshark-files/**
+
+# Keep the ignore file itself
+!.gitignore
