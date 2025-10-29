@@ -8,5 +8,15 @@
 !wireshark-files/
 !wireshark-files/**
 
+# Keep the discussion folders
+!Discussion 1/
+!Discussion 1/**
+!Discussion 2/
+!Discussion 2/**
+!Discussion 3/
+!Discussion 3/**
+!Discussion 4/
+!Discussion 4/**
+
 # Keep the ignore file itself
 !.gitignore
