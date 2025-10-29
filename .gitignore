@@ -18,5 +18,14 @@
 !Discussion 4/
 !Discussion 4/**
 
+# Re-ignore local virtualenvs and build outputs inside discussions
+Discussion 1/.venv/
+Discussion 2/.venv/
+Discussion 3/.venv/
+Discussion 4/.venv/
+Discussion 2/dist/
+Discussion 2/discussion_2.egg-info/
+Discussion 3/.DS_Store
+
 # Keep the ignore file itself
 !.gitignore

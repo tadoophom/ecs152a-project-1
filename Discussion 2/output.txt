@@ -1,0 +1,13 @@
+Total ICMP packets captured: 46
+echo reply (0): 10
+type 3: 5
+echo request (8): 10
+time exceeded (11): 21
+Routers sending time exceeded messages:
+  128.120.0.33
+  168.150.63.254
+  169.237.0.254
+  192.82.111.29
+  50.234.30.97
+  96.216.122.45
+  96.217.70.37
