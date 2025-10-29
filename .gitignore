@@ -1,5 +1,5 @@
 # Ignore everything by default
-*
+
 
 # Allow directory structures to be recursed
 !*/
@@ -8,24 +8,10 @@
 !wireshark-files/
 !wireshark-files/**
 
-# Keep the discussion folders
-!Discussion 1/
-!Discussion 1/**
-!Discussion 2/
-!Discussion 2/**
-!Discussion 3/
-!Discussion 3/**
-!Discussion 4/
-!Discussion 4/**
-
-# Re-ignore local virtualenvs and build outputs inside discussions
-Discussion 1/.venv/
-Discussion 2/.venv/
-Discussion 3/.venv/
-Discussion 4/.venv/
-Discussion 2/dist/
-Discussion 2/discussion_2.egg-info/
-Discussion 3/.DS_Store
-
 # Keep the ignore file itself
 !.gitignore
+
+.python-version
+pyproject.toml
+uv.lock
+part2_iperf
