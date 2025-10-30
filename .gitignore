@@ -16,3 +16,4 @@ pyproject.toml
 uv.lock
 wireshark-analysis.md
 analyze_wireshark_pcaps.py
+tmp-discussion

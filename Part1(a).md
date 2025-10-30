@@ -29,7 +29,6 @@
 | Visit httpforever.com | 146.190.62.39 | 2025-10-21T22:09:02.141485Z |
 | Visit tmz.com | 3.169.183.125 | 2025-10-21T22:09:33.736467Z |
 | FTP anonymous login | 209.51.188.20 | 2025-10-21T21:28:20.825205Z |
-| FTP (no login) | 209.51.188.20 | 2025-10-21T21:27:54.820943Z |
 | SSH session | 169.237.240.10 | 2025-10-21T21:30:36.139693Z |
 
 _Assumption:_ I list only the first external IPv4 destination that actually carried each activity’s payload; supporting infrastructure (campus DNS, local gateways, multicast chatter) appears in the captures but is excluded because the prompt asks for the activity destinations.
