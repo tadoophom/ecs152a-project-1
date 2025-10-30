@@ -43,16 +43,12 @@ Key findings:
 
 Script fragment used to locate the leak:
 
-```python
-import dpkt
-from pathlib import Path
+Implementation reference: `analyze_pcap1_1.py`. Running it prints:
 
-with Path("PCAP1/PCAP1_1.pcap").open("rb") as f:
-    for ts, buf in dpkt.pcap.Reader(f):
-        if b"GET /?secret=" in buf:
-            http = buf.split(b"\r\n\r\n", 1)[0].decode()
-            print(http)
-            break
 ```
-
-The script stops at the first matching packet and prints the full request, making the leaked values explicit for the report.
+----- Secret-bearing HTTP request -----
+Timestamp    : 2025-10-15T01:00:58.200875+00:00
+Client -> Server: 2601:204:c200:a930:4d70:f5b6:e2e8:ac72 -> 2600:1408:ec00:36::1736:7f31
+Request line : GET /?secret=secret1
+Header       : my-secret: Zubair Rocks!!
+```
