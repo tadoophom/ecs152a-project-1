@@ -56,7 +56,7 @@ Key findings:
 - A custom header `MY-SECRET` leaked the phrase **“Zubair Rocks!!”**, constituting another secret sent to the server.
 - Request originated from the client to `example.com` over HTTP (unencrypted), so anyone capturing the traffic can read these secrets.
 
-Implementation reference: `analyze_pcap1_1.py`. Running it prints:
+Sample output:
 
 ```
 ----- Secret-bearing HTTP request -----
