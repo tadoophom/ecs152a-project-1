@@ -14,10 +14,14 @@
 | FTP (no login) | 209.51.188.20 | 2025-10-21T21:27:54.820943Z |
 | SSH session | 169.237.240.10 | 2025-10-21T21:30:36.139693Z |
 
+_Assumption:_ I list only the first external IPv4 destination that actually carried each activity’s payload; supporting infrastructure (campus DNS, local gateways, multicast chatter) appears in the captures but is excluded because the prompt asks for the activity destinations.
+
 ### Q4. Browser identification from captures
 - Activity 2 (example.com, HTTPS): TLS hides the headers, so the browser cannot be identified.
 - Activity 3 (httpforever.com, HTTP): `User-Agent` shows Chrome 141 on macOS.
 - Activity 4 (tmz.com, HTTPS): TLS hides the headers, so the browser cannot be identified.
+
+_Assumption:_ Browser identification depends entirely on clear-text `User-Agent` strings; for encrypted TLS traffic I assume no session keys are available, so the browser stays unknown.
 
 ## Part 1(b) – PCAP1_1 Analysis
 Using `dpkt` to scan `PCAP1_1.pcap` for clear-text application data shows one HTTP GET request carrying obvious secrets:
