@@ -12,7 +12,7 @@ RESPONSE_TIMEOUT = 5  # seconds
 
 total_bytes = TOTAL_MB * 1024 * 1024
 chunk_size = CHUNK_KB * 1024
-payload = b"\x00" * chunk_size
+payload = bytes(chunk_size)
 
 print(f"Sending {TOTAL_MB} MB to {SERVER_HOST}:{SERVER_PORT}")
 
