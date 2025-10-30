@@ -14,4 +14,3 @@
 .python-version
 pyproject.toml
 uv.lock
-part2_iperf
