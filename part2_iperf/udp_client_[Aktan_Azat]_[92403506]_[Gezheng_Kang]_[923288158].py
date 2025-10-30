@@ -6,7 +6,7 @@ SERVER_HOST = "127.0.0.1"
 SERVER_PORT = 65336
 TOTAL_MB = 100
 CHUNK_KB = 8
-DONE_MESSAGE = b"done"
+DONE_MESSAGE = b"iperf-done"
 RESPONSE_TIMEOUT = 5  # seconds
 
 
