@@ -22,16 +22,54 @@
 
 ### Q3. Destination IP addresses and first packets
 
-| Activity | Destination IP | First packet (UTC) |
-| --- | --- | --- |
-| Ping google.com | 142.250.189.206 | 2025-10-21T21:23:23.159701Z |
-| Visit example.com | 23.220.75.232 | 2025-10-21T22:08:26.486174Z |
-| Visit httpforever.com | 146.190.62.39 | 2025-10-21T22:09:02.141485Z |
-| Visit tmz.com | 3.169.183.125 | 2025-10-21T22:09:33.736467Z |
-| FTP anonymous login | 209.51.188.20 | 2025-10-21T21:28:20.825205Z |
-| SSH session | 169.237.240.10 | 2025-10-21T21:30:36.139693Z |
+#### Ping google.com (`part-1-google-ping.pcap`)
+- 142.250.189.206 — 2025-10-21T21:23:23.159701+00:00
 
-_Assumption:_ I list only the first external IPv4 destination that actually carried each activity’s payload; supporting infrastructure (campus DNS, local gateways, multicast chatter) appears in the captures but is excluded because the prompt asks for the activity destinations.
+#### Visit example.com (`part-2-example-com.pcap`)
+- 142.250.191.46 — 2025-10-21T22:08:25.453891+00:00
+- 142.250.189.202 — 2025-10-21T22:08:25.468735+00:00
+- 23.220.75.232 — 2025-10-21T22:08:26.323556+00:00
+- 17.253.17.204 — 2025-10-21T22:08:27.337571+00:00
+- 142.251.46.206 — 2025-10-21T22:08:34.901962+00:00
+
+#### Visit httpforever.com (`part-3-http-forever-com.pcap`)
+- 23.220.75.232 — 2025-10-21T22:09:02.004500+00:00
+- 142.251.214.131 — 2025-10-21T22:09:02.211504+00:00
+- 146.190.62.39 — 2025-10-21T22:09:06.239416+00:00
+
+#### Visit tmz.com (`part-4-tmz-com.pcap`)
+- 18.238.192.23 — 2025-10-21T22:09:33.678005+00:00
+- 3.169.183.125 — 2025-10-21T22:09:33.736467+00:00
+- 151.101.202.132 — 2025-10-21T22:09:33.748443+00:00
+- 151.101.203.42 — 2025-10-21T22:09:33.766434+00:00
+- 65.8.185.90 — 2025-10-21T22:09:33.772994+00:00
+- 142.251.32.34 — 2025-10-21T22:09:33.783402+00:00
+- 23.67.33.104 — 2025-10-21T22:09:33.790802+00:00
+- 142.250.189.174 — 2025-10-21T22:09:33.792945+00:00
+- 151.101.201.91 — 2025-10-21T22:09:33.799011+00:00
+- 173.194.65.157 — 2025-10-21T22:09:33.804237+00:00
+- 142.251.46.166 — 2025-10-21T22:09:33.813070+00:00
+- 151.101.64.134 — 2025-10-21T22:09:33.912107+00:00
+- 63.140.37.142 — 2025-10-21T22:09:33.934919+00:00
+- 166.117.151.245 — 2025-10-21T22:09:33.951959+00:00
+- 104.18.40.226 — 2025-10-21T22:09:33.955351+00:00
+- 52.25.12.234 — 2025-10-21T22:09:33.963988+00:00
+- 151.101.203.52 — 2025-10-21T22:09:34.064807+00:00
+- 35.186.224.24 — 2025-10-21T22:09:34.745926+00:00
+- 23.46.216.82 — 2025-10-21T22:09:35.070088+00:00
+- 151.101.202.208 — 2025-10-21T22:09:35.147920+00:00
+- 142.251.46.206 — 2025-10-21T22:09:35.821389+00:00
+- 142.251.32.42 — 2025-10-21T22:09:36.209922+00:00
+- 172.217.12.106 — 2025-10-21T22:09:39.406170+00:00
+- 23.222.206.145 — 2025-10-21T22:09:41.303739+00:00
+
+#### FTP anonymous login (`part-5-ftp-anonymous-login.pcap`)
+- 209.51.188.20 — 2025-10-21T21:28:20.825205+00:00
+
+#### SSH session (`part-6-ssh.pcap`)
+- 168.150.41.169 — 2025-10-21T21:30:42.397969+00:00
+
+_Assumption:_ The list shows every unique IPv4 destination observed per activity in first-seen order, ignoring supporting infrastructure (e.g., DNS resolvers, local gateways) so that only the actual activity endpoints are reported.
 
 ### Q4. Browser identification from captures
 - Activity 2 (example.com, HTTPS): TLS hides the headers, so the browser cannot be identified.
@@ -108,4 +146,3 @@ Here’s what I found and how I figured it out:
 ### Conclusion
 
 The capture represents an **IPv6 traceroute to Google**, where Alex's computer sent multiple ICMPv6 Echo Requests with increasing hop limits to map the path. The destination was reached successfully at **hop 13**, meaning there were approximately 13 hops between Alex's device and Google’s IPv6 server.
-
